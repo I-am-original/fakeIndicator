@@ -15,7 +15,7 @@ class BusinessModel(private val provider: DataProvider, private val scheduler: I
     private val tag = javaClass.simpleName
 
     fun climate(): Observable<ClimateData> =
-            Observable.interval(5000, TimeUnit.MILLISECONDS)
+            Observable.interval(100, TimeUnit.MILLISECONDS)
                     .withLatestFrom(combine(),
                             BiFunction<Long, Triple<Int, Int, Int>, ClimateData> { _, triple -> ClimateData(triple.first, triple.second, triple.third) })
                     .doOnError { Log.e(tag, it.localizedMessage) }
