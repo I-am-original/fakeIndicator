@@ -1,11 +1,12 @@
 <resources>
+
     <string name="app_name">Climate indication</string>
     <string name="temperature">Temperature:</string>
     <string name="humidity">Humidity:</string>
     <string name="air_pressure">Air pressure:</string>
 
-    <string name="temperature_f"> °F</string>
-    <string name="humidity_percentage"> %</string>
-    <string name="air_pressure_mm"> mmHg</string>
+    <string name="temperature_f"> %d °F</string>
+    <string name="humidity_percentage"> %d %%</string>
+    <string name="air_pressure_mm"> %d mmHg</string>
 
 </resources>

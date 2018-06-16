@@ -17,7 +17,7 @@ class BusinessModel(private val provider: DataProvider, private val scheduler: I
     fun climate(): Observable<ClimateData> =
             Observable.interval(5000, TimeUnit.MILLISECONDS)
                     .withLatestFrom(combine(),
-                            BiFunction<Long, Triple<Int, Int, Int>, ClimateData> { _, triple -> ClimateData(triple.first.toString(), triple.second.toString(), triple.third.toString()) })
+                            BiFunction<Long, Triple<Int, Int, Int>, ClimateData> { _, triple -> ClimateData(triple.first, triple.second, triple.third) })
                     .doOnError { Log.e(tag, it.localizedMessage) }
                     .doOnNext { Log.d(tag, it.toString()) }
                     .subscribeOn(scheduler.io())
